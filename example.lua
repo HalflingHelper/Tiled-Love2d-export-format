@@ -22,17 +22,20 @@ function renderToCanvas(t, tilesheet)
     end
     local res = love.graphics.newCanvas(d.width * d.tileWidth,
                                         d.height * d.tileHeight)
-    res:renderTo(function()
-        for i, layer in ipairs(t.layers) do
-            for y, row in ipairs(layer) do
-                for x, tile in ipairs(row) do
-                    love.graphics.draw(tilesheet, quads[tile], x * d.tileWidth,
-                                       y * d.tileHeight)
-                end
+
+    love.graphics.setColor(1, 1, 1, 1)
+    for i, layer in ipairs(t.layers) do
+        for y, row in ipairs(layer) do
+            for x, tile in ipairs(row) do
+                res:renderTo(function()
+                    love.graphics.draw(tilesheet, quads[tile],
+                                       (x - 1) * d.tileWidth,
+                                       (y - 1) * d.tileHeight)
+                end)
+
             end
         end
-    end)
+    end
 
     return res
 end
-
