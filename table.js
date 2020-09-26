@@ -3,7 +3,7 @@ var customMapFormat = {
     extension: "lua",
 
     write: function (map, fileName) {
-        var m = fileName+"={data={tileWidth="+map.tileWidth+",tileHeight="+map.tileHeight+",width="+map.width
+        var m = "return {data={tileWidth="+map.tileWidth+",tileHeight="+map.tileHeight+",width="+map.width
         m=m+",height="+map.height+"},layers={"
         
         
