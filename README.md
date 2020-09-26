@@ -3,7 +3,7 @@ Tiled export format to a lua table with information and a tilemap.
 
 Exports a tilemap as a lua table with the following format:
 ```
-tilemap = {
+{
   data = {tileWidth=16,tileHeight=16},
   layers = {
     {
@@ -15,4 +15,4 @@ tilemap = {
 }
 ```
 
-The `example.lua` file contains a `renderToCanvas()` function that returns a love2d canvas with the tilemap rendered to it. Layers are rendered from the top down.
+The `example.lua` file contains a `renderToCanvas()` function that returns a love2d canvas with the tilemap rendered to it. Layers are rendered from the top down. `renderToCanvas()` must be called in the `love.draw()` function in order for the tilemap to render correctly.
